@@ -1,13 +1,35 @@
-body {
+*{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
+}
+body, #app {
+  width: 100vw;
+  height: 100vh;
+  
+}
+#app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+h1{
+	position: relative;
+	top: -1.5em;
+	left: 50px;
+}
+.clock{
+	position: relative;
+	margin:auto auto;
+	width: 200px;
+	height: 200px;
 }
 .hour{
 	width: 0px;
 	height: 0px;
 	border-style: solid;
-	border-width: 100px;
+	border-width: 150px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -19,28 +41,135 @@ body {
 	width: 0px;
 	height: 0px;
 	border-style: solid;
+	border-color: white;
+	border-width:120px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+	.min div{
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width:110px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		position: relative;
+		left: -110px;
+		top: -110px;
+	}
+.sec{
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-color: white;
 	border-width:75px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	top: 25px;
-	left: 25px;
+	top: 75px;
+	left: 75px;
 }
-.sec{
+	.sec div{
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width:65px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		position: relative;
+		left: -65px;
+		top: -65px;
+	}
+.output{
+	position: absolute;
+	top: 400px;
+    left: 115px;
+	font-weight: bold;
+	color: lightgray;
+}
+.num{
 	width: 0px;
 	height: 0px;
 	border-style: solid;
-	border-width:50px;
+	border-color: white;
+	border-width: 30px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	top: 50px;
-	left: 50px;
+	bottom: 20px;
+	right: 20px;
 }
-.output{
-	position: absolute;
-	top: 75px;
-	left: 60px;
-}
+	.num div{
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 25px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		position: relative;
+		top: -25px;
+		left: -25px;
+		color: white;
+	}
+	/* vo 20 */
+	/* ho 20 */
+	/* r 165 */
+	/* sin(t)=y/r => rsin(t) = y */
+	/* cos(t)=x/r => rcos(t) = x */
+		.n1{
+			bottom: 163px;
+			right: -63px;
+		}
+		.n2{
+			bottom: 103px;
+			right: -123px;
+		}
+		.n3{
+			bottom: 20px;
+			right: -145px;
+		}
+		.n4{
+			bottom: -63px;
+			right: -123px;
+		}
+		.n5{
+			bottom: -123px;
+			right: -63px;
+		}
+		.n6{
+			bottom: -145px;
+			right: 20px;
+		}
+		.n7{
+			bottom: -123px;
+			right: 103px;
+		}
+		.n8{
+			bottom: -63px;
+			right: 163px;
+		}
+		.n9{
+			bottom: 20px;
+			right: 185px;
+		}
+		.n10{
+			bottom: 103px;
+			right: 163px;
+		}
+		.n11{
+			bottom: 163px;
+			right: 103px;
+		}
+		.n12{
+			bottom: 185px;
+			right: 20px;
+		}
