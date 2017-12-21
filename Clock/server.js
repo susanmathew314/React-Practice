@@ -1,4 +1,4 @@
-var port = 8000;
+var port = 8888;
 
 var express = require("express");
 var path = require("path");
@@ -7,9 +7,10 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "./client/static")));
+app.use(express.static(path.join(__dirname, "./client")));
 
-app.set('views', path.join(__dirname, './client/views'));
+app.set('views', path.join(__dirname, './client'));
+app.set('view engine', 'ejs');
 
 require('./server/routes')(app);
 
