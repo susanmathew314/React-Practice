@@ -7,25 +7,25 @@ class Clock extends React.Component {
 	renderHour(h){
 		h = h <= 12 ? h : h-12;
 		var styles = {
-			borderColor:'hsl(' + 360/12*h + ',100%,50%)',
+			borderColor:'hsl(' + 360/12*h + ',100%,65%)',
 		}
 		return (<div style={styles} className="hour"> </div>);
 	}
 	renderMin(m){
 		var styles = {
-			borderColor:'hsl(' + 360/60*m + ',100%,50%)',
+			borderColor:'hsl(' + 360/60*m + ',100%,65%)',
 		}
 		return (<div className="min"><div style={styles}> </div></div>);
 	}
 	renderSec(s){
 		var styles = {
-			borderColor:'hsl(' + 360/60*s + ',100%,50%)',
+			borderColor:'hsl(' + 360/60*s + ',100%,65%)',
 		}
 		return (<div  className="sec"><div style={styles}> </div></div>);
 	}
 	renderNumber(i){
 		var styles = {
-			borderColor:'hsl(' + 360/12*i + ',100%,50%)',
+			borderColor:'hsl(' + 360/12*i + ',100%,65%)',
 		}
 		return(<div className={"num n"+i}><div style={styles}>{i}</div></div>)
 	}
