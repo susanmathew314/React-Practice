@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, "./client")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.set('views', path.join(__dirname, './client'));
 app.set('view engine', 'ejs');
