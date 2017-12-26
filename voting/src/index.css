@@ -1,0 +1,13 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	text-align: center;
+}
+table{
+	width: 300px;
+	margin: 0px auto;
+}
+td{
+	border: 1px solid black;
+}
