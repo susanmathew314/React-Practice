@@ -16,8 +16,7 @@ class App extends React.Component{
 
 class Vote extends React.Component{
 	selector(value){
-		var alert = ()=>alert("you chose "+value)
-		return(<button onclick={alert}> + </button>)
+		return(<button onClick={() => alert("you chose "+value)}> + </button>)
 	}
 	render(){
 		
@@ -28,23 +27,23 @@ class Vote extends React.Component{
 					<tr>
 						<td>(#)</td>
 						<td>React</td>
-						<td>{this.selector("react")}</td>
+						<td>{this.selector("React")}</td>
 					</tr>
 				</tbody>
 				<tr>
 					<td>(#)</td>
 					<td>Vue</td>
-					<td><button> + </button></td>
+					<td>{this.selector("Vue")}</td>
 				</tr>
 				<tr>
 					<td>(#)</td>
 					<td>Angular</td>
-					<td><button> + </button></td>
+					<td>{this.selector("Angular")}</td>
 				</tr>
 				<tr>
 					<td>(#)</td>
 					<td>Ember</td>
-					<td><button> + </button></td>
+					<td>{this.selector("Ember")}</td>
 				</tr>
 			
 			
