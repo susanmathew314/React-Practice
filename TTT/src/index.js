@@ -24,6 +24,7 @@ class Board extends React.Component{
 		}
 		this.updateSquare = this.updateSquare.bind(this)
 		this.getPlayer = this.getPlayer.bind(this)
+		this.resetGame = this.resetGame.bind(this)
 	}
 	updateSquare(location, cb){
 		if (this.state.winner === 0 && this.state[location] === 0) {
@@ -51,6 +52,14 @@ class Board extends React.Component{
 				
 		}
 	}
+	resetGame(){
+		this.setState({
+			0:0,	1:0,	2:0,
+			3:0,	4:0,	5:0,
+			6:0,	7:0,	8:0,
+			next: 1, winner: 0,
+		})
+	}
 	getPlayer(){
 		return this.state.next;
 	}
@@ -69,6 +78,7 @@ class Board extends React.Component{
 				)
 			}
 		<p>It is {this.playerIcons[this.state.next+1]}'s turn </p>
+		<button onClick={this.resetGame}>Reset Game</button>
 		</div>)
 	}
 }
