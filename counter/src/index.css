@@ -1,0 +1,16 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+.counter{
+	margin: 20px auto;
+	width: 300px;
+	border: 1px solid black;
+}
+h1{
+	text-align: center;
+}
+.counter button{
+	width: 50%;
+}
