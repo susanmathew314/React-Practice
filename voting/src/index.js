@@ -8,23 +8,63 @@ class VoteItem extends React.Component{
 		this.state = {
 			votes: 0,
 		}
+		this.onClick = this.onClick.bind(this)
+	}
+	onClick(){
+		this.props.incVote(this.props.title,
+			() => this.setState({votes: this.state.votes+1 })
+		)
 	}
 	render(){
 		return (
 			<tr>
 				<td>{this.state.votes}</td>
 				<td>{this.props.title}</td>
-				<td><button onClick={() => this.setState({votes: this.state.votes+1 })}> + </button></td>
+				<td><button onClick={this.onClick}> + </button></td>
 			</tr>
 		)
 	}
 }
 
 class VoteTable extends React.Component{
+	constructor(props){
+		super(props);
+		let newState = {}
+		this.props.items.forEach(
+			(item)=>{
+				newState[item] = 0;
+			}
+		)
+		this.state = newState;
+		this.incVote = this.incVote.bind(this);
+	}
+	incVote(title, cb){
+		let newState = {};
+		this.props.items.forEach(
+			(item)=>{
+				newState[item] = item === title ? this.state[item]+1 : this.state[item];
+				cb();
+			}
+		);
+		this.setState(newState);
+	}
 	render(){
 		return(
 			<table>
-				{this.props.items.map( name => <VoteItem title={name} ></VoteItem> )}
+				{this.props.items
+					.sort(
+						(a,b)=> {
+							return this.state[a] < this.state[b] ? 1 : this.state[a]===this.state[b] ? a>b : -1;
+						}
+					)
+					.map(name => 
+						<VoteItem 
+							incVote={this.incVote} 
+							title={name} 
+							key={name}
+						></VoteItem> 
+					)
+				}
 			</table>
 		)
 	}
