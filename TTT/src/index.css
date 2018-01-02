@@ -1,5 +1,18 @@
-body{
+body, *{
 	margin: 0px;
 	padding: 0px;
 	font-family: sans-serif;
+}
+.square{
+	width: 2em;
+	height: 2em;
+	padding-top: .5em;
+	display: inline-block;
+	border: 1px solid black;
+	text-align: center;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+.row{
+
 }
