@@ -1,1 +1,1 @@
-<p>A simple react app. a 'add counter' button can be clicked to add a new counter to the page. each counter has an increment and decrement button to change the counters value</p>
+<p>A simple counter app made with React. a 'add counter' button can be clicked to add a new counter to the page. each counter has an increment and decrement button to change the counters value</p>
