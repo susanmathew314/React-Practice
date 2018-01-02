@@ -76,6 +76,8 @@ class App extends React.Component{
 			<div>
 				<h1>VOTE Your JS Library!</h1>
 				<VoteTable items={["React", "Vue","Angular", "Ember"]} />
+				<h1>VOTE Your favorite Character!</h1>
+				<VoteTable items={["Izuku", "Midoriya", "Incinerator", "Batman", "Superman", "All Might"]} />
 			</div>
 		);
 	}
