@@ -20,14 +20,14 @@ class Board extends React.Component{
 			0:0,	1:0,	2:0,
 			3:0,	4:0,	5:0,
 			6:0,	7:0,	8:0,
-			next: 1, winner: 0,
+			next: 1, winner: false,
 		}
 		this.updateSquare = this.updateSquare.bind(this)
 		this.getPlayer = this.getPlayer.bind(this)
 		this.resetGame = this.resetGame.bind(this)
 	}
 	updateSquare(location, cb){
-		if (this.state.winner === 0 && this.state[location] === 0) {
+		if ( !this.state.winner && this.state[location] === 0) {
 			this.setState({ [location] : this.state.next, next: -1 * this.state.next}
 			,()=>{
 				cb();
@@ -46,7 +46,17 @@ class Board extends React.Component{
 							},100
 						)
 						this.setState({winner: this.state.next *-1})
-					}				
+					}
+					for(let i = 0; i < 9; i++){
+						if (this.state[i] === 0)
+							return;
+					}
+					setTimeout(
+						()=>{
+							alert("Draw! No Winner!");
+						},100
+					)
+					this.setState({winner: 0});
 				}
 			);
 				
@@ -57,7 +67,7 @@ class Board extends React.Component{
 			0:0,	1:0,	2:0,
 			3:0,	4:0,	5:0,
 			6:0,	7:0,	8:0,
-			next: 1, winner: 0,
+			next: 1, winner: false,
 		})
 	}
 	getPlayer(){
