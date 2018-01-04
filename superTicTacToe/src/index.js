@@ -191,7 +191,7 @@ class Game extends React.Component{
 					for(let i = 0; i < lines.length; i++){
 						let v = this.state[lines[i][0]].winner + this.state[lines[i][1]].winner + this.state[lines[i][2]].winner
 						if (Math.abs(v)===3){
-							alert("winner! its: "+ ["O"," ","X"][Math.sign(v)]+1);
+							alert("winner! its: "+ ["O"," ","X"][Math.sign(v)+1]);
 							break;
 						}
 					}
@@ -234,8 +234,20 @@ class Game extends React.Component{
 			);
 		}
 	}
-	validLoc(board){
-		return (this.state.nextLoc===null || (this.state[this.state.nextLoc].winner !== null && this.state.nextLoc !== board) || (this.state[this.state.nextLoc].winner === null && this.state.nextLoc === board))
+	validLoc(board){ //DONT WORK!
+		if(this.state.nextLoc===null){
+			return true;
+		}
+		if(this.state[board].winner !== null)
+			return false;
+		
+		if (this.state[this.state.nextLoc].winner !== null)
+			return true;
+
+		if(this.state.nextLoc === board)
+			return true;
+
+		return false;
 	}
 	render(){
 		return(
