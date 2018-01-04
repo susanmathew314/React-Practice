@@ -12,8 +12,8 @@
 	
 */
 body{
-	padding: 0px;
-	padding-top: 50px;
+	padding: 50px 0px;
+	
 	font-family: sans-serif;
 	min-width: 230px;
 	max-width: 550px;
@@ -25,7 +25,7 @@ h1{
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
 	font-size: 5em;
-	color: #bedee8;
+	color: #bd4c4c;
 	padding: 0px;
 	margin: 0px;
 }
@@ -45,33 +45,101 @@ form{
 	line-height: 1.7em;
 	border-bottom: 1px solid #bedee8;
 }
-form.newitem input{
-	font-size: 1.2em;
-	padding-left: 2em;
-	font-family: 'Shadows Into Light Two', cursive;
-	border: none;
-	box-sizing: border-box;
-}
+	form.newitem input{
+		line-height: 2em;
+		font-size: 1.2em;
+		font-family: 'Shadows Into Light Two', cursive;
+		border: none;
+		box-sizing: border-box;
+		color: #666;
+	}
+	form.newitem button{
+		margin: 5px 1rem;
+		vertical-align: middle;
+		width: 4rem;
+		height: 2rem;
+		font-size: 1em;
+		font-weight: bold;
+		background: transparent;
+		border: none;
+		color: #ccc;
+	}
 :focus{outline: 0;}
 
+input::-webkit-input-placeholder { 
+	color:#ccc; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input:-moz-placeholder { 
+	color:#ccc; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input::-moz-placeholder { 
+	color:#ccc; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input:-ms-input-placeholder { 
+	color:#ccc; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+
+input:focus::-webkit-input-placeholder { 
+	color:transparent; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input:focus:-moz-placeholder { 
+	color:transparent; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input:focus::-moz-placeholder { 
+	color:transparent; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+input:focus:-ms-input-placeholder { 
+	color:transparent; 
+	transition: ease-in-out, color .15s ease-in-out;
+}
+
+
+
+
 input[type="checkbox" i] {
-	margin: 5px 2em;
+	margin: 5px 2rem;
 	vertical-align: middle;
-	width: 2em;
-	height: 2em;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
 }
 label.item{
 	border-left: 1px solid #ff9da3;
 	padding-left: 10px;
 	height: 100%;
 	display: inline-block;
+	transition: ease-in-out, color .25s ease-in-out;
 	/* position: relative; */
 	/* top: .3em; */
 }
 label.completed{
 	color: #ccc;
 	text-decoration: line-through;
+}
+
+.list-footer{
+	padding: 0px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+.list-footer>*{
+}
+.list-footer .uncompleted-count{
+	color: #bd4c4c;
+	display: inline-block;
+}
+.list-footer button{
+	background: transparent;
+	border: 0px;
+	margin: 10px 0px;
+}
+.list-footer button.selected{
+	border: 1px solid #bd4c4c;
 }
