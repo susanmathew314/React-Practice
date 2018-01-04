@@ -1,0 +1,77 @@
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:200'); */
+/* @import url('https://fonts.googleapis.com/css?family=The+Girl+Next+Door'); */
+/* @import url('https://fonts.googleapis.com/css?family=Indie+Flower'); */
+/* @import url('https://fonts.googleapis.com/css?family=Coming+Soon'); */
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+/* 
+	font-family: 'The Girl Next Door', sans-serif; 
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Indie Flower', cursive;
+	font-family: 'Shadows Into Light Two', cursive;
+	font-family: 'Coming Soon', cursive;
+	
+*/
+body{
+	padding: 0px;
+	padding-top: 50px;
+	font-family: sans-serif;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+	background: #EAEAEA;
+	color: #666;
+}
+h1{
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	font-size: 5em;
+	color: #bedee8;
+	padding: 0px;
+	margin: 0px;
+}
+.list-container{
+	width: 100%;
+	height: fit-content;
+	background: #FFF;
+	box-shadow: 7px 6px 4px 0px #d2d2d2;
+		-webkit-box-shadow: 7px 6px 4px 0px #d2d2d2;
+		-moz-box-shadow: 7px 6px 4px 0px #d2d2d2;
+	border:1px solid #AAA;
+	padding: 10px;
+}
+form{
+	font-size: 1.7em;
+	font-family: 'Shadows Into Light Two', cursive;
+	line-height: 1.7em;
+	border-bottom: 1px solid #bedee8;
+}
+form.newitem input{
+	font-size: 1.2em;
+	padding-left: 2em;
+	font-family: 'Shadows Into Light Two', cursive;
+	border: none;
+	box-sizing: border-box;
+}
+:focus{outline: 0;}
+
+input[type="checkbox" i] {
+	margin: 5px 2em;
+	vertical-align: middle;
+	width: 2em;
+	height: 2em;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+label.item{
+	border-left: 1px solid #ff9da3;
+	padding-left: 10px;
+	height: 100%;
+	display: inline-block;
+	/* position: relative; */
+	/* top: .3em; */
+}
+label.completed{
+	color: #ccc;
+	text-decoration: line-through;
+}
