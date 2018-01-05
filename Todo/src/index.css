@@ -41,9 +41,13 @@ h1{
 }
 form{
 	font-size: 1.7em;
+	padding-top: 2px;
 	font-family: 'Shadows Into Light Two', cursive;
 	line-height: 1.7em;
 	border-bottom: 1px solid #bedee8;
+}
+.listitem{
+	height: 1.7em;
 }
 	form.newitem input{
 		line-height: 2em;
@@ -122,7 +126,15 @@ label.completed{
 	color: #ccc;
 	text-decoration: line-through;
 }
-
+.deleteitem{
+	background: transparent;
+	color: #bd4c4c;
+	border: 0px;
+	vertical-align: top;
+	display: inline-block;
+	height: 100%;
+	font-size: .75em;
+}
 .list-footer{
 	padding: 0px 20px;
 	display: flex;
@@ -130,16 +142,27 @@ label.completed{
 	align-items: baseline;
 }
 .list-footer>*{
-}
-.list-footer .uncompleted-count{
 	color: #bd4c4c;
-	display: inline-block;
+}
+.list-footer p{
+	transition: ease-in-out, color .15s ease-in-out;
+	color: #bd4c4c
+}
+.list-footer p.remove-all:hover{
+	text-decoration: underline;
+}
+.hidden{
+	color: transparent;
 }
 .list-footer button{
 	background: transparent;
-	border: 0px;
-	margin: 10px 0px;
+	border: 1px solid transparent;
+	margin: 10px 5px;
+	box-sizing: border-box;
 }
 .list-footer button.selected{
 	border: 1px solid #bd4c4c;
+}
+.list-footer button.unselected:hover{
+	border: 1px solid pink;
 }
