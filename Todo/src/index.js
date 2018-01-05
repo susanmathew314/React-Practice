@@ -7,8 +7,7 @@ class App extends React.Component{
 	render(){
 		return (
 			<div>
-				<h1>todos</h1>
-				<List />
+				<List title="todos"/>
 			</div>
 		);
 	}
@@ -18,10 +17,6 @@ class List extends React.Component{
 		super(props);
 		this.state = {
 			items: [
-				{id: 3, completed: false, text: "delete item"},
-				{id: 2, completed: false, text: "filter item"},
-				{id: 1, completed: true, text: "add item"},
-				{id: 0, completed: true, text: "helloworld"},
 			],//{completed: true, text: "helloworld", editing: false}
 			filter: "all",
 		}
@@ -59,33 +54,36 @@ class List extends React.Component{
 	render(){
 		
 		return(
-		<div className="list-container">
-			<ListInput onSubmitNew={this.onSubmitNew } />
-			{this.state.items.map((item)=>{
-				if (item.completed === true){
-					if (this.state.filter === "completed" || this.state.filter === "all")
-						return (<ListItem removeItem={this.removeItem} onSubmitNew={this.onSubmitNew} onChangeCompleted={this.onChangeCompleted} key={item.id} id={item.id} completed={item.completed} text={item.text}/>)
+		<div>
+			<h1>{this.props.title}</h1>
+			<div className="list-container">
+				<ListInput onSubmitNew={this.onSubmitNew } />
+				{this.state.items.map((item)=>{
+					if (item.completed === true){
+						if (this.state.filter === "completed" || this.state.filter === "all")
+							return (<ListItem removeItem={this.removeItem} onSubmitNew={this.onSubmitNew} onChangeCompleted={this.onChangeCompleted} key={item.id} id={item.id} completed={item.completed} text={item.text}/>)
+						return null;
+					}
+					else if (this.state.filter === "incomplete" || this.state.filter === "all")
+						return(<ListItem removeItem={this.removeItem} onSubmitNew={this.onSubmitNew} onChangeCompleted={this.onChangeCompleted} key={item.id} id={item.id} completed={item.completed} text={item.text}/>)
 					return null;
-				}
-				else if (this.state.filter === "incomplete" || this.state.filter === "all")
-					return(<ListItem removeItem={this.removeItem} onSubmitNew={this.onSubmitNew} onChangeCompleted={this.onChangeCompleted} key={item.id} id={item.id} completed={item.completed} text={item.text}/>)
-				return null;
-				}
-			)}
-			<div className="list-footer">
-				<p className="uncompleted-count">{this.state.items.filter((i)=>!i.completed).length + " items left"}</p>
-				<div>
-				<button className={this.state.filter === "all" ? "selected" : "unselected"}
-					onClick={()=>{this.onfilter("all")}}
-					>all</button>
-				<button className={this.state.filter === "completed" ? "selected" : "unselected"}
-					onClick={()=>{this.onfilter("completed")}}
-					>completed</button>
-				<button className={this.state.filter === "incomplete" ? "selected" : "unselected"}
-					onClick={()=>{this.onfilter("incomplete")}}
-					>incomplete</button>
+					}
+				)}
+				<div className="list-footer">
+					<p className="uncompleted-count">{this.state.items.filter((i)=>!i.completed).length + " items left"}</p>
+					<div>
+					<button className={this.state.filter === "all" ? "selected" : "unselected"}
+						onClick={()=>{this.onfilter("all")}}
+						>all</button>
+					<button className={this.state.filter === "completed" ? "selected" : "unselected"}
+						onClick={()=>{this.onfilter("completed")}}
+						>completed</button>
+					<button className={this.state.filter === "incomplete" ? "selected" : "unselected"}
+						onClick={()=>{this.onfilter("incomplete")}}
+						>incomplete</button>
+					</div>
+					<p onClick={this.removeCompleted} className={this.state.items.filter((i)=>i.completed).length !== 0? "remove-all": "remove-all hidden"}>remove completed</p>
 				</div>
-				<p onClick={this.removeCompleted} className={this.state.items.filter((i)=>i.completed).length !== 0? "remove-all": "remove-all hidden"}>remove completed</p>
 			</div>
 		</div>
 		)
