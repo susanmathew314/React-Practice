@@ -29,7 +29,6 @@ class List extends React.Component{
 	}
 	onChangeCompleted(id){
 		var item = this.state.items.filter((item)=>item.id===id)[0];
-		console.log(item);
 		item.completed = !item.completed;
 		const newList = this.state.items.sort( (a,b) => a.completed ===true && a.completed === b.completed ? 0:  a.completed === true? 1 : b.completed === true? -1 : a.id < b.id);
 		this.setState({items: newList});

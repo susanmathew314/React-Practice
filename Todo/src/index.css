@@ -146,12 +146,12 @@ label.completed{
 }
 .list-footer p{
 	transition: ease-in-out, color .15s ease-in-out;
-	color: #bd4c4c
+	color: #666
 }
 .list-footer p.remove-all:hover{
 	text-decoration: underline;
 }
-.hidden{
+body .hidden{
 	color: transparent;
 }
 .list-footer button{
