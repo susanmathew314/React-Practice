@@ -53,9 +53,10 @@ body{
 #lists{
 	padding-left: 50px;
 	padding-top: 50px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: top;
+	margin: 0px auto;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	/* align-items: top; */
 }
 #lists>div{
 	padding: 20px;

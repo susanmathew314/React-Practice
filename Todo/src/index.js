@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import List from './List.js';
 import { ListForm } from './List.js';
-
 class App extends React.Component{
 	constructor(props){
 		super(props);
@@ -12,11 +11,17 @@ class App extends React.Component{
 		}
 		this.addList = this.addList.bind(this);
 	}
-	addList(data, cb){
+	addList(title, cb,eb){
 		//needs to take error back too. list title must be unique
 		const lists = this.state.lists.slice();
-		if(data.title!==""){
-			lists.push(data.title)
+		if(lists.indexOf(title) !== -1){	//list already exists
+			eb("new lists must have a unique title")
+		}
+		else if(title === "" || /^\s+$/.test(title)){
+			eb("list title can not be empty");
+		}
+		else{
+			lists.push(title)
 			this.setState({lists: lists},cb);
 		}
 	}

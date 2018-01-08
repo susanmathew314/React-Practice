@@ -27,6 +27,12 @@ form{
 	line-height: 1.7em;
 	border-bottom: 1px solid #bedee8;
 }
+small{
+	display: inline-block;
+	font-family: 'Raleway', sans-serif;
+	font-size: .6em;
+	color: red;
+}
 .listitem{
 	height: 1.7em;
 }
@@ -146,4 +152,38 @@ body .hidden{
 }
 .list-footer button.unselected:hover{
 	border: 1px solid pink;
+}
+
+/* edit list item form styles */
+.edit-item-form{
+	line-height: 2em;
+	font-size: 1.2em;
+	font-family: 'Shadows Into Light Two', cursive;
+}
+.edit-item-form input[type="text" i]{
+	padding: .2em;
+	border: 1px solid #bedee8;
+	box-shadow: 0px 0px 5px 3px #bedee8;
+		-webkit-box-shadow: 0px 0px 8px 3px #bedee8;
+		-moz-box-shadow: 0px 0px 8px 3px #bedee8;
+	font-size: 1em;
+	padding-left: 10px;
+	height: 100%;
+	width: fit-content;
+	display: inline-block;
+	font-family: 'Shadows Into Light Two', cursive;
+}
+.save-item-btn{
+	margin: 5px 1rem;
+		vertical-align: middle;
+		width: 4rem;
+		height: 2rem;
+		font-size: 1em;
+		font-weight: bold;
+		background: transparent;
+		border: none;
+		color: green;
+}
+.save-item-btn:hover{
+	border: 1px solid green;
 }
