@@ -10,6 +10,9 @@ h1{
 .list-container{
 	width: 100%;
 	height: fit-content;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0px auto;
 	background: #FFF;
 	box-shadow: 7px 6px 4px 0px #d2d2d2;
 		-webkit-box-shadow: 7px 6px 4px 0px #d2d2d2;

@@ -1,10 +1,63 @@
-body{
-	padding: 50px 0px;
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:200'); */
+/* @import url('https://fonts.googleapis.com/css?family=The+Girl+Next+Door'); */
+/* @import url('https://fonts.googleapis.com/css?family=Indie+Flower'); */
+/* @import url('https://fonts.googleapis.com/css?family=Coming+Soon'); */
+
+/* 
+	font-family: 'The Girl Next Door', sans-serif; 
+	font-family: 'Raleway', sans-serif;
+	font-family: 'Indie Flower', cursive;
+	font-family: 'Shadows Into Light Two', cursive;
+	font-family: 'Coming Soon', cursive;
 	
+*/
+/*
+side bar needs to be position fixed. body padding should change on side bar 
+hover or something so that the lists move out of the way when side bar opens.
+
+*/
+body{
+	padding: 0px 0px 50px 0px;
 	font-family: sans-serif;
-	min-width: 230px;
-	max-width: 550px;
 	margin: 0 auto;
 	background: #EAEAEA;
 	color: #666;
+}
+#main{
+	display: flex;
+	width: 100vw;
+}
+#sidebar{
+	position: fixed;
+	background: white;
+	min-height: 100vh;
+	display: inline-block;
+	vertical-align: top;
+	transition: ease-in-out, width .35s ease-in-out;
+	overflow: hidden;
+	box-shadow: -4px 1px 20px 2px #666;
+}
+	#sidebar.open{
+		width: 300px;
+	}
+	#sidebar.closed{
+		width: 50px;
+	}
+	h1{
+		font-size: 16px;
+	}
+	.menu{
+		width: fit-content;
+		margin:0px auto;
+	}
+#lists{
+	padding-left: 50px;
+	padding-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: top;
+}
+#lists>div{
+	padding: 20px;
+	width: 550px;
 }

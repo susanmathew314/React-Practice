@@ -1,5 +1,38 @@
 import React from 'react';
 import './List.css';
+
+export class ListForm extends React.Component{
+	constructor(props){
+		super(props)
+		this.state = {
+			title: "",
+		}
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.isValid = this.isValid.bind(this);
+			
+	}
+	handleChange(e){
+		this.setState({title: e.target.value});
+	}
+	handleSubmit(e){
+		e.preventDefault();
+		this.props.handleSubmit(this.state,
+		()=>{
+			this.setState({title: ""})
+		}
+		);
+	}
+	isValid(){
+		return this.state.title !== "";
+	}
+	render(){
+		return (<form onSubmit={this.handleSubmit} >
+			<input value={this.state.title} onChange={this.handleChange} type="text" name="title" id="list-form-title" placeholder="list title"/>
+			<button type="submit" disabled={this.isValid}>Create List</button>
+		</form>)
+	}
+}
 export default class List extends React.Component{
 	constructor(props){
 		super(props);
@@ -41,7 +74,7 @@ export default class List extends React.Component{
 	render(){
 		
 		return(
-		<div>
+		<div id={this.props.title}>
 			<h1>{this.props.title}</h1>
 			<div className="list-container">
 				<ListInput onSubmitNew={this.onSubmitNew } />
