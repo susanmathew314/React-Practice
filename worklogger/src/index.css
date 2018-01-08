@@ -1,0 +1,17 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+label{
+	margin: 5px;
+	display: inline-block;
+	text-align: right;
+	width: 12ch;
+}
+button{
+	margin: 0px auto;
+}
+.time{
+	color: blue;
+}
