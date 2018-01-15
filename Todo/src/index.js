@@ -30,7 +30,7 @@ class App extends React.Component{
 			<div id="main">
 				<SideBar addList={this.addList} lists={this.state.lists}/>
 				<div id="lists">
-					{this.state.lists.map((title)=><List title={title} />)}
+					{this.state.lists.map((title)=><List title={title} key={title}/>)}
 				</div>
 			</div>
 		);
@@ -73,7 +73,7 @@ class SideBar extends React.Component{
 					<ListForm handleSubmit={this.props.addList}/>
 					<h2>Your Lists</h2>
 					<ul>
-						{this.props.lists.map((title)=> <li><a href={"#"+title}>{title}</a></li>  )}
+						{this.props.lists.map((title)=> <li><a href={"#"+title}>{title}</a> x</li>  )}
 					</ul>
 				</div>
 			);

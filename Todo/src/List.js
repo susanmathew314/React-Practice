@@ -94,10 +94,25 @@ export default class List extends React.Component{
 	}
 	renderItem(item){
 		if (this.state.editing === -1 || this.state.editing !== item.id){
-			return (<ListItem handleDblClick={this.handleDblClick} removeItem={this.removeItem} onSubmitNew={this.onSubmitNew} onChangeCompleted={this.onChangeCompleted} key={item.id} id={item.id} completed={item.completed} text={item.text}/>)
+			return (
+				<ListItem 
+					handleDblClick={this.handleDblClick} 
+					removeItem={this.removeItem} 
+					onSubmitNew={this.onSubmitNew} 
+					onChangeCompleted={this.onChangeCompleted} 
+					key={item.id} 
+					id={item.id} 
+					completed={item.completed} 
+					text={item.text}/>
+				)
 		}
 		else{
-			return (<EditItem update={this.updateItemText} item={item}/>)
+			return (
+				<EditItem 
+					update={this.updateItemText} 
+					key={item.id} 
+					item={item}/>
+				)
 		}
 	}
 	render(){
@@ -158,7 +173,7 @@ class ListInput extends React.Component{
 	}
 	render(){
 		return (
-			<form className="newitem" action="javascript:void(0);" onSubmit={this.handleSubmit}>
+			<form className="newitem" onSubmit={this.handleSubmit}>
 				<button type="submit">v</button>
 				<input onChange={this.handleChange}type="text" value={this.state.value} name="newitem" placeholder="add a new item"/>
 			</form>
@@ -183,7 +198,7 @@ class ListItem extends React.Component{
 		if (!this.state.hover)
 			deleteclasses.push("hidden");
 		return (
-			<form onDoubleClick={()=>{this.props.handleDblClick(this.props.id)}} onMouseLeave={()=>this.setState({hover: false})} onMouseEnter={()=>this.setState({hover: true})} className="listitem" action="javascript:void(0);">
+			<form onDoubleClick={()=>{this.props.handleDblClick(this.props.id)}} onMouseLeave={()=>this.setState({hover: false})} onMouseEnter={()=>this.setState({hover: true})} className="listitem">
 				<input type="checkbox" name="status" checked={this.props.completed} onChange={()=> this.props.onChangeCompleted(this.props.id)}/>
 				<label className={labelclasses.join(" ")} >{this.props.text}</label>
 				<button className={deleteclasses.join(" ")} onClick={()=>this.props.removeItem(this.props.id)}>X</button>
