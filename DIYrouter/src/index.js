@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { RouterOutlet } from './router.js';
-import { Router } from './router.js';
+import { RouterOutlet } from './RouterOutput.js';
+
 window.onpopstate = (e)=>{
 	alert("hi");
 }
